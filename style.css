@@ -1,0 +1,360 @@
+/* Reset on every elements */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
+  color: #000;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+a {
+  color: #262626;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  /* take up almost all the screen */
+  width: 90%;
+  /* But set up max-width we don't want to pass certain width i.e 1100px */
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Navigation */
+
+.main-nav {
+  /* Will make all the direct child elements of this class to line up nicely */
+  display: flex;
+  /* by defualt the items will stretch on cross axis from cross start to end so we made center to make items to center */
+  align-items: center;
+  /* To create space between the logo, main, right menu */
+  justify-content: space-between;
+  height: 60px;
+  padding: 20px 0;
+  font-size: 13px;
+}
+
+.main-nav .logo {
+  /* To make the image look smaller */
+  width: 110px;
+}
+
+.main-nav ul {
+  display: flex;
+}
+
+.main-nav ul li {
+  /* To make some spacing in b/w the main nav items */
+  padding: 0 10px;
+}
+
+.main-nav ul li a {
+  /* To push the underline little more bottom on hover */
+  padding-bottom: 2px;
+}
+
+.main-nav ul li a:hover {
+  border-bottom: 2px solid #262626;
+}
+
+.main-nav ul.main-menu {
+  /* To make the main-menu grow and come immediate next to the logo */
+  flex: 1;
+  margin-left: 20px;
+}
+
+/* Hamburger Icon */
+
+.menu-btn {
+  cursor: pointer;
+  /* by doing absolute now the icon is taken out of the flow of everything else and is positioned as absolute at top left corner */
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 2;
+  display: none;
+}
+
+/* Showcase */
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  font-weight: bold;
+  padding: 10px 20px;
+  background: #262626;
+  color: white;
+  font-size: 15px;
+}
+
+.btn:hover {
+  /* To have hover effect so decreased opacity */
+  opacity: 0.9;
+}
+
+.dark {
+  color: #fff;
+}
+
+.dark .btn {
+  background: #f4f4f4;
+  color: #333;
+}
+
+.show-case {
+  /* show-case to have a width of 100% i.e entire width of its container */
+  width: 100%;
+  height: 400px;
+  /* Applied some properties to the image to make no repeat, to align center horizontally and vertically and to cover the entire width and height */
+  background: url('./img/showcase.png') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-end;
+  padding-bottom: 50px;
+  margin-bottom: 20px;
+}
+
+.show-case h2, .show-case p {
+  /* To add some spacing in order to seperate them a little */
+  margin-bottom: 10px;
+}
+
+.show-case .btn {
+  /* space above button in order to seperate them a little */
+  margin-top: 20px;
+}
+
+/* Home Cards */
+
+.home-cards {
+  /* It will be a grid container and elements i.e div inside this class be a grid items */
+  display: grid;
+  /* Need to specify the grid to how many columns and all */
+  grid-template-columns: repeat(4, 1fr);
+  /* Space between the grid columns */
+  grid-gap: 20px;
+}
+
+.home-cards img {
+  /* Images always go out of their container untill and unless we dont't restrict the width to be 100% of their container in this as we specified now it won't go out of the container that way it won't go outside of the grid column*/
+  width: 100%;
+  /* To push the texts below the image to push the text down a little bit */
+  margin-bottom: 20px;
+}
+
+.home-cards h3 {
+  margin-bottom: 5px;
+}
+
+.home-cards a {
+  /* When it comes to margins and padding, browsers treat inline elements differently. You can add space to the left and right on an inline element, but you cannot add height to the top or bottom padding or margin of an inline element. Because of which we converted a tags from inline (default) to inline block */
+  display: inline-block;
+  padding-top: 10px;
+  color: #0067B8;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.home-cards a:hover i {
+  /* This way when we hover over the a tag then the i icon will push out a little bit */
+  margin-left: 10px;
+}
+
+/* Xbox */
+
+.xbox {
+  height: 350px;
+  width: 100%;
+  background: url('./img/xbox.png') no-repeat center center/cover;
+  margin-bottom: 20px;
+}
+
+.xbox .content {
+  width: 40%;
+  padding: 50px 0 0 30px;
+}
+
+.xbox p, .carbon p {
+  margin: 10px 0 20px;
+}
+
+/* Carbon */
+
+.carbon {
+  height: 350px;
+  width: 100%;
+  background: url('./img/carbon.jpg') no-repeat center center/cover;
+}
+
+.carbon .content {
+  width: 55%;
+  padding: 100px 0 0 30px;
+}
+
+/* Follow */
+
+.follow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 30px 0 30px;
+}
+
+/* Specifying everyting inside this need to be given margin */
+
+.follow * {
+  margin-right: 10px;
+}
+
+/* Link */
+
+.links {
+  background: #f2f2f2;
+  color: #616161;
+  font-size: 12px;
+  padding: 35px 0;
+}
+
+/* We will make this link-inner to be a grid then every direct child will be a grid item */
+
+.links-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.links li {
+  line-height: 2;
+}
+
+/* Footer */
+
+.footer {
+  background: #f2f2f2;
+  color: #616161;
+  font-size: 12px;
+  padding: 20px 0;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer div i {
+  margin-right: 10px;
+}
+
+.footer ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer div {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.footer li {
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+/* Media Queries for screen 700px and below */
+
+@media (max-width: 700px) {
+  .menu-btn {
+    display: block;
+  }
+  .menu-btn:hover {
+    opacity: 0.5;
+  }
+  .main-nav ul.right-menu {
+    margin-right: 50px;
+  }
+  .main-nav ul.main-menu {
+    /* Will change from flex to block and look like they are stack together */
+    display: block;
+    /* by doing absolute now we are taking out the element from the flow of everything and will put at the top left of the screen*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Even doing the above things it will be still inside the container so to remove out we will do translate x property 
+    and Initially it will be hidden but not with display none but pushing it off the screen*/
+    transform: translateX(-500px);
+    /* Design the navigation background */
+    background: #f2f2f2;
+    width: 50%;
+    height: 100%;
+    border-right: #ccc 1px solid;
+    opacity: 0.9;
+    padding: 30px;
+    /* It needs to know what property to which we want to add the transition on. In this case it will be transform because it is responsible to change the translate x value */
+    transition: transform 0.5s ease-in-out;
+  }
+  .main-nav ul.main-menu li {
+    padding: 10px;
+    border-bottom: #ccc solid 1px;
+    font-size: 14px;
+  }
+  .main-nav ul.main-menu li:last-child {
+    border-bottom: 0;
+  }
+  .main-nav ul.main-menu.show {
+    transform: translateX(-20px);
+  }
+  .home-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .xbox .content p {
+    display: none;
+  }
+  .xbox .content h2 {
+    margin-bottom: 20px;
+  }
+  .carbon .content {
+    width: 85%;
+  }
+  .links-inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Media Queries for screen 500px and below */
+
+@media (max-width: 500px) {
+  .home-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .links-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .links .links-inner ul {
+    margin-bottom: 20px;
+  }
+}
